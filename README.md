@@ -26,3 +26,19 @@ O template cria um **bucket S3** com as seguintes características:
   - ARN do bucket criado  
 
 ---
+
+▶️ Como usar este template
+
+  Acesse o console da AWS e vá até o serviço CloudFormation.
+
+  Clique em Create Stack → With new resources (standard).
+
+  Em Specify template, faça o upload do arquivo template.yaml.
+
+  Dê um nome para a Stack (exemplo: MinhaStackS3).
+
+  Avance até o final e clique em Create stack.
+
+  Aguarde o status CREATE_COMPLETE.
+
+  Verifique no serviço S3 que o bucket bucketnutti foi criado com sucesso.
