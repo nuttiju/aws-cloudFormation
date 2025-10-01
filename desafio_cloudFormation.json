@@ -1,0 +1,46 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Stack de exemplo no CloudFormation",
+  "Resources": {
+    "MeuBucketS3": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "bucketnutti",
+        "VersioningConfiguration": {
+          "Status": "Enabled"
+        },
+        "Tags": [
+          {
+            "Key": "Projeto",
+            "Value": "DesafioCloudFormation"
+          },
+          {
+            "Key": "Autor",
+            "Value": "Julia Nutti"
+          },
+          {
+            "Key": "Ambiente",
+            "Value": "Dev"
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "NomeDoBucket": {
+      "Description": "Nome do bucket criado",
+      "Value": {
+        "Ref": "MeuBucketS3"
+      }
+    },
+    "ARNDoBucket": {
+      "Description": "ARN do bucket criado",
+      "Value": {
+        "Fn::GetAtt": [
+          "MeuBucketS3",
+          "Arn"
+        ]
+      }
+    }
+  }
+}
